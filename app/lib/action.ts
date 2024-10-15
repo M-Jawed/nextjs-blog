@@ -57,6 +57,7 @@ export async function createInvoices(prevState: State, formData: FormData) {
     INSERT INTO invoices (customer_id, amount, status, date)
     VALUES (${customerId}, ${amount}, ${status}, ${date})
 `;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
    } catch (error) {
     return {
         message: 'Database Error: Could not Create Invoices',
@@ -99,6 +100,7 @@ export async function updateInvoice(
         SET customer_id = ${customerId}, amount = ${amountInCents}, status = ${status}
         WHERE id = ${id}
     `;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
         return {
             message: 'Database Error: Could not Update Invoices'
@@ -115,6 +117,7 @@ export async function deleteInvoiceButton(id: string) {
         await sql `
         DELETE FROM invoices WHERE id = ${id}
     `;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
         return {
             message: 'Database Error: Could not Delete Invoices'
