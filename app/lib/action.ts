@@ -108,7 +108,7 @@ export async function updateInvoice(
 }
 
 export async function deleteInvoiceButton(id: string) {
-    
+
         try {
         await sql `
         DELETE FROM invoices WHERE id = ${id}
