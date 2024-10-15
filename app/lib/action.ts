@@ -31,7 +31,7 @@ export type State = {
     };
     message?: string | null;
 };
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function createInvoices(prevState: State, formData: FormData) {
     
     const validatedFields = CreateInvoice.safeParse({
@@ -48,6 +48,7 @@ export async function createInvoices(prevState: State, formData: FormData) {
     }
 
     const { customerId, amount, status } = validatedFields.data;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const amountInCents = amount * 100;
     const date = new Date().toISOString().split('T')[0];
 
@@ -71,6 +72,7 @@ const UpdateInvoice = FormSchema.omit({ id: true, date: true});
 
 export async function updateInvoice(
     id: string, 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     prevState: State,
     formData: FormData,
 ) {
@@ -123,6 +125,7 @@ export async function deleteInvoiceButton(id: string) {
 
 
 export async function authenticate(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     prevState: string | undefined,
     formData: FormData,
   ) {
